@@ -15,10 +15,9 @@ if os.path.exists(slide_path):
         height=600,
         theme="serif",
         config={
-            "transition": "concave",
+            "transition": "slide",
             "controls": True,
             "progress": True,
-            "margin": 0
         },
         key="memento_slides"
     )
@@ -131,3 +130,63 @@ if history_data:
 else:
     st.info("История изменений пока пуста")
 
+with st.expander("Код программы"):
+    st.markdown("""
+    
+    class DocumentMemento:
+    
+        def __init__(self, content, date):
+            self._content = content
+            self._date = date
+    
+        @property
+        def content(self):
+            return self._content
+    
+        @property
+        def date(self):
+            return self._date.strftime("%Y-%m-%d %H:%M:%S")
+
+    class Document:
+
+        'Originator - создает и хранит состояния'
+        def __init__(self):
+            self._content = ""
+            self._font = "Arial"
+            self._font_size = 12
+    
+        def write(self, text):
+            self._content += text
+    
+        def save(self):
+            return DocumentMemento(self._content, datetime.datetime.now())
+    
+        def restore(self, memento):
+            self._content = memento.content
+    
+        @property
+        def content(self):
+            return self._content
+    
+        @content.setter
+        def content(self, value):
+            self._content = value
+
+    class History:
+
+        def __init__(self):
+            self._mementos = []
+    
+        def push(self, memento):
+            self._mementos.append(memento)
+    
+        def pop(self):
+            if len(self._mementos) > 0:
+                return self._mementos.pop()
+            return None
+    
+        def get_history(self):
+            return [(m.date, m.content[:30] + "..." if len(m.content) > 30 else m.content)
+                    for m in self._mementos]
+
+    """)

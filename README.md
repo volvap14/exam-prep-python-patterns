@@ -8,8 +8,8 @@
 
 | Паттерн   | Назначение | Код | Презентация |
 |-----------|------------|-----|-------------|
-| **Proxy**     | Управление доступом к объекту | [`proxy_example.py`](./proxy_example.py) | [`proxy_presentation.md`](./slides/proxy_presentation.md) |
-| **Memento**   | Сохранение и восстановление состояния | [`memento_example.py`](./memento_example.py) | [`memento_presentation.md`](./slides/memento_presentation.md) |
+| **Proxy**     | Управление доступом к объекту | [`proxy_example.py`](./proxy_presantation.py) | [`proxy_presentation.md`](./proxy/slides1.md) |
+| **Memento**   | Сохранение и восстановление состояния | [`memento_example.py`](./memento_presantation.py) | [`memento_presentation.md`](./memento/slides1.md) |
 
 ---
 

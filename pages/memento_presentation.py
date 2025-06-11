@@ -13,7 +13,7 @@ if os.path.exists(slide_path):
     rs.slides(
         markdown_content,
         height=600,
-        theme="moon",
+        theme="serif",
         config={
             "transition": "concave",
             "controls": True,

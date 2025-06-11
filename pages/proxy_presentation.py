@@ -46,3 +46,22 @@ proxy = BankAccountProxy(account, "admin123")
 if st.button("Проверить баланс"):
     result = proxy.check_balance(password)
     st.write(f"Баланс: {result}")
+
+with st.expander("Код программы"):
+    st.markdown("""
+    class BankAccount:
+    
+        def __init__(self, balance):
+            self.balance = balance
+
+    class BankAccountProxy:
+    
+        def __init__(self, real_account, password):
+            self.real_account = real_account
+            self.password = password
+    
+        def check_balance(self, input_password):
+            if input_password == self.password:
+                return self.real_account.balance
+            return "Доступ запрещен"
+    """)

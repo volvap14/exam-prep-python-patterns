@@ -12,7 +12,7 @@ if os.path.exists(slide_path):
     rs.slides(
         markdown_content,
         height=600,
-        theme="night",
+        theme="solarized",
         config={
             "transition": "slide",
             "controls": True,

@@ -74,6 +74,44 @@ Key принцип: Originator создает Memento с текущим сост
 - Системы контроля версий
 
 ---
+### Пример кода
+```
+from typing import List
+from dataclasses import dataclass
+
+@dataclass
+class TextEditorMemento:
+    def __init__(self):
+        self._text = ""
+    
+    @property
+    def text(self) -> str:
+        return self._next
+    
+    @text.setter
+    def text(self, value: str) -> None:
+        self._text = value
+    
+    def save(self) -> TextEditorMemento:
+        return TextEditorMemento(self._text)
+    
+    def restore(self, memento: TextEditorMemento) -> None:
+        self._text = memento.text
+
+class History:
+    def __init__(self):
+        self._mementos: List[TextEditorMemento] = []
+    
+    def save(self, memento: TextEditorMemento) -> None:
+        self._mementos.append(memento)
+    
+    def undo(self) -> TextEditorMemento:
+        if not self._mementos:
+            raise ValueError("Нет сохраненных состояний")
+        return self._mementos.pop()
+```
+
+---
 ### Альтернативы
 
 Другие подходы:

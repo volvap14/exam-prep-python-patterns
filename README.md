@@ -1,5 +1,4 @@
-streamlit reveal slides  [![Version](https://img.shields.io/pypi/v/streamlit-reveal-slides)](https://pypi.org/project/streamlit-reveal-slides/#history) [![Downloads](https://img.shields.io/pypi/dm/streamlit-reveal-slides)](https://pypi.org/project/streamlit-reveal-slides/#files) [![Component Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://exam-prep-python-patterns-eamikl2qqsvrjrdwudul6z.streamlit.app/)
-============
+
 
 <p align="center">
   Create and add <a href="https://revealjs.com/">reveal.js</a> HTML presentations to your streamlit app!

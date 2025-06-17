@@ -11,7 +11,7 @@ if os.path.exists(slide_path):
         markdown_content = f.read()
     rs.slides(
         markdown_content,
-        height=600,
+        height=800,
         theme="solarized",
         config={
             "transition": "slide",
